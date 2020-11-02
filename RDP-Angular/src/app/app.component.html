@@ -1,0 +1,25 @@
+<mat-sidenav-container>
+  <mat-sidenav mode="over" [(opened)]="isOpen">
+
+    <mat-icon (click)="toggleSidenav()" class="toggle-btn-close ml-3 mt-3"
+      >chevron_left</mat-icon
+    >
+
+    <div
+      class="drawer-section text-center p-2 d-flex justify-content-center"
+      [routerLink]="['/']"
+      routerLinkActive="router-link-active"
+      (click)="toggleSidenav()"
+    >
+      <mat-icon class="mr-3">people_outline</mat-icon>
+      <span> Customers</span>
+    </div>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-icon (click)="toggleSidenav()" class="toggle-btn ml-3 mt-3"
+      >menu</mat-icon
+    >
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

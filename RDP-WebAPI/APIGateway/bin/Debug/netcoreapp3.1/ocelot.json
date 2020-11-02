@@ -1,0 +1,56 @@
+{
+  "Routes": [
+    //List Controls
+    {
+      "DownstreamPathTemplate": "/api/control/GetControls",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "57954"
+        }
+      ],
+      "UpstreamPathTemplate": "/GetControls",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    //Add Customer
+    {
+      "DownstreamPathTemplate": "/api/Customer/AddCustomer",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "57954"
+        }
+      ],
+      "UpstreamPathTemplate": "/AddCustomer",
+      "UpstreamHttpMethod": [ "POST" ]
+    },
+    //Get Customer Details
+    {
+      "DownstreamPathTemplate": "/api/Customer/GetCustomerDetails",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "57954"
+        }
+      ],
+      "UpstreamPathTemplate": "/GetCustomers",
+      "UpstreamHttpMethod": [ "GET" ]
+    },
+    //Get Customer Details By Id
+    {
+      "DownstreamPathTemplate": "/api/Customer/GetCustomerById/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": "57954"
+        }
+      ],
+      "UpstreamPathTemplate": "/GetCustomerById/{id}",
+      "UpstreamHttpMethod": [ "GET" ]
+    }
+  ]
+}

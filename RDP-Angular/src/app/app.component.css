@@ -1,0 +1,33 @@
+.mat-drawer {
+  width: 25%;
+}
+.mat-drawer-container {
+  height: 100%;
+}
+
+.drawer-section {
+  background-color: #3f51b5;
+  font-size: 19px;
+  color: white;
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.toggle-btn {
+  font-size: 40px;
+  cursor: pointer;
+}
+
+.toggle-btn-close {
+  font-size: 40px;
+  align-content: flex-end;
+}
+
+.drawer-section {
+  height: auto;
+}
+
+@media (max-width: 600px) {
+  .mat-drawer {
+    width: 90%;
+  }
+}

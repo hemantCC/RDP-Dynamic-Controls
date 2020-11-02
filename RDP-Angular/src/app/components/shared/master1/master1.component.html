@@ -1,0 +1,68 @@
+<div class="display-4 text-center mb-5">Customer</div>
+<form [formGroup]="master1Form" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-md-3 text-center" *ngFor="let control of master1Controls">
+      <!-- condition for dropdown controller -->
+      <mat-form-field
+        class="w-75"
+        *ngIf="control.controlType == 'Dropdown' && control.module == 'Master1'"
+      >
+        <mat-label>{{ control.name }}</mat-label>
+        <mat-select formControlName="{{ control.entityName }}">
+          <mat-option
+            *ngFor="let option of control.dropdownValues"
+            value="{{ option }}"
+          >
+            {{ option }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <!-- condition for textbox -->
+      <mat-form-field
+        class="w-75"
+        *ngIf="control.controlType == 'Textbox' && control.module == 'Master1'"
+      >
+        <mat-label>{{ control.name }}</mat-label>
+        <input matInput formControlName="{{ control.entityName }}" />
+      </mat-form-field>
+
+      <!-- condition for datepicker -->
+      <mat-form-field
+        appearance="fill"
+        class="w-75"
+        *ngIf="control.controlType == 'Date' && control.module == 'Master1'"
+      >
+        <mat-label>{{ control.name }} </mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="{{ control.entityName }}"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <button
+      mat-raised-button
+      color="primary"
+      class="col-md-2 mr-3"
+      type="submit"
+      id="submitBtn"
+    >
+      Save
+    </button>
+    <button
+      mat-raised-button
+      color="secondary"
+      class="col-md-2 mr-2"
+      type="button"
+      [routerLink]="['/']"
+      routerLinkActive="router-link-active"
+    >
+      Cancel
+    </button>
+  </div>
+</form>

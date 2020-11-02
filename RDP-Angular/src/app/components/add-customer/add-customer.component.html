@@ -1,0 +1,62 @@
+<!-- Ngx Spinner -->
+<ngx-spinner
+  bdColor="rgba(0,0,0,0.78)"
+  size="large"
+  color="#fa0000"
+  type="triangle-skew-spin"
+  [fullScreen]="true"
+>
+  <p style="color: white">Loading...</p>
+</ngx-spinner>
+<mat-icon
+  aria-hidden="false"
+  aria-label="Example home icon"
+  class="ml-4"
+  style="font-size: 35px; color: blue; cursor: pointer;"
+  [routerLink]="['/']"
+  routerLinkActive="router-link-active"
+  >home</mat-icon
+>
+
+<mat-horizontal-stepper linear #stepper>
+  <mat-step>
+    <ng-template matStepLabel>Master 1</ng-template>
+    <app-master1 [master1Controls]="controls"></app-master1>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Master 2</ng-template>
+    <app-master2 [master2Controls]="controls"></app-master2>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>FA Information</ng-template>
+    <app-fa-information [master3Controls]="controls"></app-fa-information>
+  </mat-step>
+
+  <mat-step>
+    <ng-template matStepLabel>Consultant</ng-template>
+    <app-consultant [master4Controls]="controls"></app-consultant>
+  </mat-step>
+</mat-horizontal-stepper>
+<div class="float-right mr-2">
+  <button
+    (click)="goBack()"
+    class="mr-3"
+    mat-raised-button
+    color="primary"
+    type="button"
+    [disabled]="stepper.selectedIndex === 0"
+  >
+    Back
+  </button>
+  <button
+    (click)="goForward()"
+    mat-raised-button
+    color="primary"
+    type="button"
+    [disabled]="stepper.selectedIndex === 3"
+  >
+    Next
+  </button>
+</div>

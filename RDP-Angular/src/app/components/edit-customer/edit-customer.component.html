@@ -1,0 +1,42 @@
+<!-- Ngx Spinner -->
+<ngx-spinner
+  bdColor="rgba(0,0,0,0.78)"
+  size="large"
+  color="#fa0000"
+  type="triangle-skew-spin"
+  [fullScreen]="true"
+>
+  <p style="color: white">Loading...</p>
+</ngx-spinner>
+<mat-icon
+  aria-hidden="false"
+  aria-label="Example home icon"
+  class="ml-4"
+  style="font-size: 35px; color: blue; cursor: pointer;"
+  [routerLink]="['']"
+  routerLinkActive="router-link-active"
+  >home</mat-icon
+>
+
+<mat-tab-group class="text-center" mat-align-tabs="center">
+  <mat-tab label="Master 1">
+    <div class="container">
+      <app-master1 [master1Controls]="controls" [currentCustomerDetails]="customerDetails" ></app-master1>
+    </div>
+  </mat-tab>
+  <mat-tab label="Master 2">
+    <div class="container">
+      <app-master2 [master2Controls]="controls" [currentCustomerDetails]="customerDetails"></app-master2>
+    </div>
+  </mat-tab>
+  <mat-tab label="FA Information">
+    <div class="container">
+      <app-fa-information [master3Controls]="controls" [currentCustomerDetails]="customerDetails"></app-fa-information>
+    </div>
+  </mat-tab>
+  <mat-tab label="Consultant">
+    <div class="container">
+      <app-consultant [master4Controls]="controls" [currentCustomerDetails]="customerDetails ? customerDetails : null "></app-consultant>
+    </div>
+  </mat-tab>
+</mat-tab-group>
